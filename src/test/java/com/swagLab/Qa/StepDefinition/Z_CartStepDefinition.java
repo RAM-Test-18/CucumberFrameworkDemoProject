@@ -29,18 +29,18 @@ public class Z_CartStepDefinition extends LoginPage{
 	@And("I click on  addtocart button {int} times")
 	public void i_click_on_addtocart_button_times(Integer int1) throws InterruptedException 
 	{
-		TimeUnit.SECONDS.sleep(2);
+		TimeUnit.SECONDS.sleep(1/2);
 		Input.clickOn(addToCartButton_First, click);
 		Input.clickOn(addToCartButton_Second, click);
-		TimeUnit.SECONDS.sleep(2);
+		TimeUnit.SECONDS.sleep(1/2);
 	}
 
 	@Then("I should see {int} items add to shopping cart")
 	public void i_should_see_items_add_to_shopping_cart(Integer int1) throws InterruptedException 
 	{
-		TimeUnit.SECONDS.sleep(2);
+		TimeUnit.SECONDS.sleep(1/2);
 		Input.mouseHover(numberItemsInShoppingCart);
-		TimeUnit.SECONDS.sleep(2);
+		TimeUnit.SECONDS.sleep(1/2);
 		if(Integer.parseInt(Input.getElementText(numberItemsInShoppingCart))==2) 
 		{
 			System.out.println("2 Items are Added into Cart.");
@@ -53,7 +53,7 @@ public class Z_CartStepDefinition extends LoginPage{
 	@And("I click on shopping cart icon")
 	public void i_click_on_shopping_cart_icon() throws InterruptedException 
 	{
-		TimeUnit.SECONDS.sleep(2);
+		TimeUnit.SECONDS.sleep(1/2);
 		Input.clickOn(numberItemsInShoppingCart, click);
 	}
 
@@ -63,10 +63,11 @@ public class Z_CartStepDefinition extends LoginPage{
 		
 		if(Input.isElementPresent(removeItemFromCart_First))
 		{
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(1/2);
 			Input.clickOn(removeItemFromCart_First, click);
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(1/2);
 			Input.clickOn(removeItemFromCart_Second, click);
+			System.out.println("Removing items from Cart.");
 			
 			
 		}else
